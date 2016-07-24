@@ -4309,7 +4309,8 @@ webpackJsonp([0],[
 	    foldNav: function foldNav() {
 	      var nav = document.querySelector('.fold');
 	      if (nav) {
-	        nav.style.display = "none";
+	        // nav.style.display="none";
+	
 	      }
 	    }
 	  },
