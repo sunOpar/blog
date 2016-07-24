@@ -1,0 +1,27 @@
+<template>
+  <div id="app">
+    <v-header></v-header>
+    <v-content></v-content>
+  </div>
+</template>
+
+<script>
+import vue from 'vue'
+import vHeader from './components/header.vue'
+import vContent from './components/content.vue'
+export default {
+  components: {
+    vHeader,
+    vContent
+  },
+}
+</script>
+<style lang="scss">
+ 
+   html {
+    height: 100%;
+  }
+  #app{
+    height: 100%;
+  }
+</style>

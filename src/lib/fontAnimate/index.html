@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>文字特效</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">	
+			<div class="os-phrases" id="os-phrases">
+				<h2>Sometimes it's better</h2>
+				<h2>to hide</h2>
+				<h2>in order to</h2>
+				<h2>survive evil</h2>
+				<h2>Thanatos</h2>
+				<h2>This fall</h2>
+				<h2>Prepare</h2>
+				<h2>Refresh to replay</h2>
+			</div>
+		</div><!-- /container -->
+		<script src="http://libs.useso.com/js/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.lettering.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
+			})
+		</script>
+	</body>
+</html>
