@@ -24,7 +24,11 @@ $bgColor:#fff;
 $bgHeight:250px;
 	.blogWrap{
 		background-color:$bgColor;
-		height: 100%;
+		&:after{
+			content:'';
+			display: block;
+			clear: both;
+		}
 	}
 	.blogHeader{
 		height:$bgHeight;

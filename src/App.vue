@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import vue from 'vue'
 import vHeader from './components/header.vue'
 import vContent from './components/content.vue'
 export default {

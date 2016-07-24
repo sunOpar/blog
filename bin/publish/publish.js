@@ -21,7 +21,7 @@ function callbackFunc(pathname,dst){
 	rs.on('data',function(chunk){
 		rs.pause();
 		read(chunk,dst,function(){
-			rs.resume;
+			rs.resume();
 		});
 	});
 	rs.on('end',function(){
@@ -45,9 +45,14 @@ var read=(data,dst)=>{
 		data.forEach(function(currentValue,index,arr){
 			newarr = currentValue.split(':');
 			// obj['aa'] = 'aa';
-			obj[newarr[0]] = newarr[1];
+			if(newarr[1]){
+				obj[newarr[0]] = newarr[1].trim();
+			}
 		});
-		articles[count] = obj;
+		if(obj.title){
+			articles[count] = obj;
+			console.log(articles[count]);
+		}
 	}
 	if(count+1 == arr.length){
 		// articles = JSON.stringify(articles);
@@ -64,4 +69,4 @@ var write = (obj,ws)=>{
 }
 }
 
-travel(path.join(__dirname,'../../post'),path.join(__dirname,'../../data/articleList.json'));
+travel(path.join(__dirname,'../../_posts'),path.join(__dirname,'../../data/articleList.json'));
