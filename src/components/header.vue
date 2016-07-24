@@ -50,8 +50,8 @@ export default {
     foldNav:function(){
       var nav = document.querySelector('.fold');
       if(nav){
-        nav.style.display="none";
-
+        // nav.style.display="none";
+        
       }
     }
   },
