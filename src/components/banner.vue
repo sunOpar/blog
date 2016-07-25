@@ -39,6 +39,7 @@ export default {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	min-height: 300px;
+	max-height:100%;
 	position: relative;
 	z-index: -1;
 	animation: fade 5s;

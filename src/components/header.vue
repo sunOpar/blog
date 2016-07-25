@@ -1,20 +1,20 @@
 <template>
-  <header class="cointainer">
-  <a href="#"><h1 class="logo col-sm-7 col-sm-offset-1">{{name}}</h1></a>
-  <nav>
-    <ul v-bind:class="fold" class="nav nav-pills col-sm-4">
+  <header class="container" v-bind:class="headClass">
+  <a href="#" class="col-sm-3 col-sm-push-1"><h1 class="logo">{{name}}</h1></a>
+  <nav class="nav">
+    <ul v-bind:class="fold" class="nav nav-pills">
       <li role="presentation"><a href="#">{{home}}</a></li>
       <li role="presentation"><a v-link="{path:'/blog'}" >{{blog}}</a></li>
       <li role="presentation"><a v-bind:href="githubUrl" target="_blank">{{github}}</a></li>
       <li role="presentation"><a v-link="{path:'/gallery'}">{{about}}</a></li>
     </ul>
-    <div class="folder">
+    <!-- <div class="folder">
       <button type="button">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    </div>
+    </div> -->
   </nav>
   </header>
 </template>
@@ -32,7 +32,8 @@ export default {
       about:'',
       githubUrl:'https://github.com/sunbrother',
       blogUrl:'http://www.sunopar.com',
-      fold:''
+      fold:'',
+      headClass:''
     }
   },
   created:function(){
@@ -65,29 +66,52 @@ export default {
         that.fold = '';
       }
     },false);
+    window.addEventListener('scroll',function(){
+      if(window.scrollY>10){
+        console.log(window.scrollY);
+        that.headClass='stackHeader';
+      }else{
+        that.headClass='';
+      }
+    },false);
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-$minHeader:1020px;
-$oneMaxWidth:1529px;
-$twoMaxWidth:1400px;
-$threeMaxWidth:1190px;
-h1 {
+.nav{
+  float:right;
+  margin-right: 2rem;
+}
+.logo {
   color:#fff;
   margin-top: 30px;
-  font-size:50px;
+  font-size:3rem;
+}
+.stackHeader{
+    background: #2a2a2a;
+    -webkit-box-shadow: 0 0 10px #333;
+    -moz-box-shadow: 0 0 10px #333;
+    box-shadow: 0 0 10px #333;
+    .logo{
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;      
+    }
+    .nav li>a{
+      margin-top: 0.2rem;
+    }
 }
 .icon-bar{
   border-bottom:1px solid #fff;
   margin-top:5px;
 }
 .nav li>a{
+  display: inline-block;
   color:#fff;
-  font-size: 26px;
+  font-size: 1.5rem;
   margin-top: 30px;
+  margin-right:0.5rem;
   margin-bottom: 10px;
   border-radius: 0;
   &:hover,
@@ -96,40 +120,41 @@ h1 {
     border-bottom: 3px solid #fff;
   }
 }
-@media(max-width:$oneMaxWidth){
-  h1{
-    font-size:40px;
-
+@media (max-width:768px){
+  .nav{
+    margin-right:0;
+    margin-top: 0;
   }
   .nav li>a{
-    font-size:23px;
+    font-size: 1rem;
+    margin-top: 1rem;
   }
-}
-.folder{
-  display:none;
-}
-@media(max-width:$twoMaxWidth){
-  h1{
-    font-size:35px;
-
+  .logo{
+    font-size: 2rem;
+    display: none;
   }
-  .nav li>a{
-    font-size:18px;
-  }
-}
-@media(max-width:$threeMaxWidth){
-  h1{
-    font-size:30px;
-
-  }
-  .nav li>a{
-    font-size:14px;
-  }
-}
-header{
-
 }
 nav{
+  z-index: 2;
+  &:before{
+    display: table;
+    content: '';
+  }
+  &:after{
+    clear: both;
+  }
+}
+li{
+  display:inline-block;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+header:after{
+  clear:none;
+}
+header{
+  position: fixed;
   z-index: 2;
 }
 </style>

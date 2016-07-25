@@ -35,9 +35,12 @@ import '../filter/convertDate.js'
 	}
 </script>
 <style lang="scss" scoped>
-@media only screen and (min-width:768px){
+@media(max-width:768px){
 	.artListContent .post-title{
-		font-size: 36px;
+    font-size: 1.3rem;
+	}
+	.post-preview{
+		margin-left: 1rem;
 	}
 }
 

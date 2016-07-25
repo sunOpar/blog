@@ -1,8 +1,6 @@
 <template>
 	<div class="articleWrap container">
-		<div class="row">
-			<div class="articleBody col-sm-offset-2 col-sm-8">{{{article | trimLine |marked}}}</div class="articleBody">
-		</div>
+		<div class="articleBody">{{{article | trimLine |marked}}}</div class="articleBody">
 	</div>
 </template>
 <script>
@@ -31,12 +29,21 @@ export default{
 	},
 }
 </script>
-<style lang="scss">
-	.articleBody{
-		color: #000;
-		margin-top: 50px;
+<style lang="scss" scoped>
+@media(max-width:768px){
+	.articleWrap{
+		width: 80%;
+		margin:auto;
+		// margin-left: 1rem;
+		// margin-right: 1rem;
 	}
+}
+	
 	.articleWrap{
 		background-color: #fff;
+		margin:auto;
+		width: 80%;
+		
 	}
+	
 </style>
