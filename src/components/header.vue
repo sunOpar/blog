@@ -8,13 +8,7 @@
       <li role="presentation"><a v-bind:href="githubUrl" target="_blank">{{github}}</a></li>
       <li role="presentation"><a v-link="{path:'/gallery'}">{{about}}</a></li>
     </ul>
-    <!-- <div class="folder">
-      <button type="button">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div> -->
+    
   </nav>
   </header>
 </template>
@@ -86,10 +80,6 @@ export default {
       margin-top: 0.2rem;
     }
 }
-.icon-bar{
-  border-bottom:1px solid #fff;
-  margin-top:5px;
-}
 .nav li>a{
   display: inline-block;
   color:#fff;
@@ -101,7 +91,6 @@ export default {
   &:hover,
   &:focus{
     background: none;
-    border-bottom: 3px solid #fff;
   }
 }
 @media (max-width:768px){
