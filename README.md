@@ -3,8 +3,10 @@
 ## version
 
 ### v1.0.0
+
 适配桌面端和移动端
-![show](http://7xqo7w.com1.z0.glb.clouddn.com/a.gif)
+![show](./src/assets/show.gif)
+
 ## 技术栈
 
 ### 工程化工具
