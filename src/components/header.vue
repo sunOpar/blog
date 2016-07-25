@@ -19,28 +19,15 @@ export default {
   data () {
     return {
       homepage:'http://www.sunopar.com/sunopar',
-      name:'',
-      home:'',
-      blog:'',
-      github:'',
-      about:'',
+      name:'SUNOPAR',
+      home:'HOME',
+      blog:'BLOG',
+      github:'GITHUB',
+      about:'ABOUT',
       githubUrl:'https://github.com/sunbrother',
       blogUrl:'http://www.sunopar.com',
       headClass:''
     }
-  },
-  created:function(){
-    this.$http.get(homeJson)
-    .then(this.successCallback)
-    .catch((res)=>{
-      console.log(res);
-    });
-  },
-  methods:{
-    successCallback:function(res){
-      this.name = res.data.header.logo;
-      [this.home,this.blog,this.github,this.about] = res.data.header.nav;
-    },
   },
   ready: function(){
     var that = this;
