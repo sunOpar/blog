@@ -2,7 +2,7 @@
 <div class="artListContent container">
 	<div class="blogBody">
 		<div class="row">
-			<section v-for="item in items" class="post-preview col-sm-10 col-sm-offset-2">
+			<section v-for="item in items" class="post-preview col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
 				<a v-link="{path:item.url,append:true}"><h2 class="post-title">{{item.title}}</h2></a>
 				<p class="post-date">{{item.date | convertDate}}</p>
 			</section>
