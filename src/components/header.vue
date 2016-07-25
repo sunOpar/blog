@@ -111,7 +111,7 @@ export default {
   color:#fff;
   font-size: 1.5rem;
   margin-top: 30px;
-  margin-right:0.5rem;
+  margin-right:0.1rem;
   margin-bottom: 10px;
   border-radius: 0;
   &:hover,
