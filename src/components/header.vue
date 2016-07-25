@@ -14,7 +14,6 @@
 </template>
 
 <script>
-let homeJson = require("../../data/homepage.json");
 export default {
   data () {
     return {
