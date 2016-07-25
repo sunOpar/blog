@@ -2,7 +2,7 @@
   <header class="container" v-bind:class="headClass">
   <a href="#" class="col-sm-3 col-sm-push-1"><h1 class="logo">{{name}}</h1></a>
   <nav class="nav">
-    <ul v-bind:class="fold" class="nav nav-pills">
+    <ul v-bind:class="fold">
       <li role="presentation"><a href="#">{{home}}</a></li>
       <li role="presentation"><a v-link="{path:'/blog'}" >{{blog}}</a></li>
       <li role="presentation"><a v-bind:href="githubUrl" target="_blank">{{github}}</a></li>
@@ -32,7 +32,6 @@ export default {
       about:'',
       githubUrl:'https://github.com/sunbrother',
       blogUrl:'http://www.sunopar.com',
-      fold:'',
       headClass:''
     }
   },
@@ -48,24 +47,9 @@ export default {
       this.name = res.data.header.logo;
       [this.home,this.blog,this.github,this.about] = res.data.header.nav;
     },
-    foldNav:function(){
-      var nav = document.querySelector('.fold');
-      if(nav){
-        // nav.style.display="none";
-        
-      }
-    }
   },
   ready: function(){
     var that = this;
-    window.addEventListener('resize',function(){
-      if(window.innerWidth<=960){
-        that.fold = 'fold';
-        that.foldNav();
-      }else{
-        that.fold = '';
-      }
-    },false);
     window.addEventListener('scroll',function(){
       if(window.scrollY>10){
         console.log(window.scrollY);
@@ -122,12 +106,17 @@ export default {
 }
 @media (max-width:768px){
   .nav{
-    margin-right:0;
-    margin-top: 0;
+    margin: 0;
   }
   .nav li>a{
     font-size: 1rem;
-    margin-top: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1rem 0;
+  }
+  .nav ul{
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .logo{
     font-size: 2rem;

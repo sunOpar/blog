@@ -59,24 +59,31 @@ export default {
 	right: 0;
 	bottom: 0;
 	margin:auto;
-	// height: 100px;
-	font-size: 100px;
+	font-size: 8rem;
 	font-family: 'Dosis', 'Lato', sans-serif;
 
 }
 @media(max-width:1295px){
 	.introduce{
-		font-size: 70px;
+		font-size: 7rem;
+	}
+}
+@media(max-width: 1236px){
+	.introduce{
+		font-size: 5rem;
 	}
 }
 @media(max-width: 1000px){
 	.introduce{
-		font-size: 50px;
+		font-size: 3.5rem;
 	}
 }
-@media(max-height: 700px){
+@media(max-width: 768px){
 	.banner{
-		background-size: 100% 700px;
+		background-size: 100% 500px;
+	}
+	.introduce{
+		font-size:1rem;
 	}
 }
 .jumbotron{

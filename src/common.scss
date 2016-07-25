@@ -629,3 +629,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
 }
 }
+@media (max-width:768px){
+    div.os-phrases h1>span{
+     display: none;
+    }
+}
