@@ -1,5 +1,6 @@
 <template>
 	<div class="articleWrap container">
+		<div v-if="$loadingRouteData" class="progress">loading</div>
 		<div class="articleBody">{{{article | trimLine |marked}}}</div class="articleBody">
 	</div>
 </template>
@@ -27,9 +28,20 @@ export default{
 			this.successCallback(res);
 		})
 	},
+	route:{
+	    data:function(transition){
+	      console.log('data钩子');
+	      // console.log('loading:',$loadingRouteData);
+	      transition.next();
+	    }
+  	}
 }
 </script>
 <style lang="scss" scoped>
+.progress{
+	color:black;
+	font-size: 6rem;
+}
 @media(max-width:768px){
 	.articleWrap{
 		width: 80%;
@@ -43,7 +55,10 @@ export default{
 		background-color: #fff;
 		margin:auto;
 		width: 80%;
-		
+	}
+
+	.articleBody{
+		padding: 2rem;
 	}
 	
 </style>

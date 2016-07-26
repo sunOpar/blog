@@ -1,5 +1,5 @@
 <template>
-	<div class="banner" v-bind:style="styleObj">
+	<div class="banner" transtion="bannerT" v-bind:style="styleObj">
 		<div class="jumbotron col-sm-offset-2 os-phrases">
 			<h1 class="introduce col-sm-12">{{{intruduce | splitTitle}}}</h1>
 		</div>
@@ -30,7 +30,9 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
+.bannerT-transtion{
+	transition: all .3s ease;
+}
 .banner {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
