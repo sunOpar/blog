@@ -1,6 +1,6 @@
 <template>
 	<div class="articleWrap container">
-		<div v-if="$loadingRouteData">dasdsadasdsad</div>
+		<div v-if="$loadingRouteData" class="progress">loading</div>
 		<div class="articleBody">{{{article | trimLine |marked}}}</div class="articleBody">
 	</div>
 </template>
@@ -29,14 +29,19 @@ export default{
 		})
 	},
 	route:{
-	    data:function(transtion){
+	    data:function(transition){
 	      console.log('data钩子');
-	      console.log('loading:',transtion.$loadingRouteData);
+	      // console.log('loading:',$loadingRouteData);
+	      transition.next();
 	    }
   	}
 }
 </script>
 <style lang="scss" scoped>
+.progress{
+	color:black;
+	font-size: 6rem;
+}
 @media(max-width:768px){
 	.articleWrap{
 		width: 80%;
