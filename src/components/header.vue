@@ -46,6 +46,12 @@ export default {
         that.headClass='';
       }
     },false);
+  },
+  route:{
+    data:function(transition){
+      console.log('data钩子');
+      console.log('loading:',transtion.$loadingRouteData);
+    }
   }
 }
 </script>

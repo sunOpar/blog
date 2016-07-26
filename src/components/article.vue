@@ -1,5 +1,6 @@
 <template>
 	<div class="articleWrap container">
+		<div v-if="$loadingRouteData">dasdsadasdsad</div>
 		<div class="articleBody">{{{article | trimLine |marked}}}</div class="articleBody">
 	</div>
 </template>
@@ -27,6 +28,12 @@ export default{
 			this.successCallback(res);
 		})
 	},
+	route:{
+	    data:function(transtion){
+	      console.log('data钩子');
+	      console.log('loading:',transtion.$loadingRouteData);
+	    }
+  	}
 }
 </script>
 <style lang="scss" scoped>

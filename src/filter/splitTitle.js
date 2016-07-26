@@ -17,7 +17,5 @@ vue.filter('splitTitle',(value)=>{
 	word = char.map((currentV,index,arr)=>{
 		return '<span class="word'+(index+1)+'">'+currentV.join('')+'</span>';
 	});
-	console.log(word);
-	// console.log(char);
 	return word.join('');
 });
