@@ -4303,8 +4303,6 @@ webpackJsonp([0],[
 	  }
 	};
 	// </script>
-	//
-	// <!-- Add "scoped" attribute to limit CSS to this component only -->
 	// <style lang="scss" scoped>
 	// .nav{
 	//   float:right;
@@ -4316,7 +4314,7 @@ webpackJsonp([0],[
 	//   font-size:3rem;
 	// }
 	// .hideHeader{
-	//   transform:translateY(-107px);
+	//   // transform:translateY(-107px);
 	// }
 	// .hideHeader,
 	// .stackHeader{
@@ -4349,7 +4347,7 @@ webpackJsonp([0],[
 	// }
 	// @media (max-width:768px){
 	//   .hideHeader{
-	//     transform:translateY(-51px);
+	//     // transform:translateY(-51px);
 	//   }
 	//   .nav{
 	//     margin: 0;
