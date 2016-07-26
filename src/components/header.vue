@@ -35,8 +35,7 @@ export default {
       if(window.scrollY>10){
         if(window.scrollY>originY){
           originY = window.scrollY;
-          console.log('originY:',originY);
-          that.headClass = 'hideHeader';
+          // that.headClass = 'hideHeader';
         }else{
           originY = window.scrollY;
           that.headClass='stackHeader';
