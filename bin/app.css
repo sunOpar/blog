@@ -519,22 +519,19 @@ html {
 .hideHeader[_v-8c2217b6] {
   -webkit-transform: translateY(-107px);
           transform: translateY(-107px); }
-  .hideHeader .logo[_v-8c2217b6] {
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem; }
-  .hideHeader .nav li > a[_v-8c2217b6] {
-    margin-top: 0.2rem; }
+
+.hideHeader .logo[_v-8c2217b6],
+.stackHeader .logo[_v-8c2217b6] {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem; }
+
+.hideHeader .nav li > a[_v-8c2217b6],
+.stackHeader .nav li > a[_v-8c2217b6] {
+  margin-top: 0.2rem; }
 
 .stackHeader[_v-8c2217b6] {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
   background: #2a2a2a;
   box-shadow: 0 0 10px #333; }
-  .stackHeader .logo[_v-8c2217b6] {
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem; }
-  .stackHeader .nav li > a[_v-8c2217b6] {
-    margin-top: 0.2rem; }
 
 .nav li > a[_v-8c2217b6] {
   display: inline-block;
@@ -583,9 +580,7 @@ header[_v-8c2217b6]:after {
 
 header[_v-8c2217b6] {
   position: fixed;
-  z-index: 2;
-  -webkit-transition: all .5s linear;
-  transition: all .5s linear; }
+  z-index: 2; }
 .content[_v-28c94511] {
   height: 100%; }
 .banner[_v-06922944] {

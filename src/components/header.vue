@@ -59,18 +59,24 @@ export default {
   margin-top: 30px;
   font-size:3rem;
 }
+.hideHeader{
+  transform:translateY(-107px);
+}
+.hideHeader,
 .stackHeader{
-    background: #2a2a2a;
-    -webkit-box-shadow: 0 0 10px #333;
-    -moz-box-shadow: 0 0 10px #333;
-    box-shadow: 0 0 10px #333;
-    .logo{
+  .logo{
       margin-top: 0.2rem;
       margin-bottom: 0.2rem;      
     }
     .nav li>a{
       margin-top: 0.2rem;
     }
+}
+.stackHeader{
+    background: #2a2a2a;
+    -webkit-box-shadow: 0 0 10px #333;
+    -moz-box-shadow: 0 0 10px #333;
+    box-shadow: 0 0 10px #333;
 }
 .nav li>a{
   display: inline-block;
@@ -86,6 +92,9 @@ export default {
   }
 }
 @media (max-width:768px){
+  .hideHeader{
+    transform:translateY(-51px);
+  }
   .nav{
     margin: 0;
   }
