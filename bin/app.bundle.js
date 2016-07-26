@@ -4286,10 +4286,16 @@ webpackJsonp([0],[
 	
 	  ready: function ready() {
 	    var that = this;
+	    var originY = 0;
 	    window.addEventListener('scroll', function () {
 	      if (window.scrollY > 10) {
-	        console.log(window.scrollY);
-	        that.headClass = 'stackHeader';
+	        if (window.scrollY > originY) {
+	          originY = window.scrollY;
+	          // that.headClass = 'hideHeader';
+	        } else {
+	          originY = window.scrollY;
+	          that.headClass = 'stackHeader';
+	        }
 	      } else {
 	        that.headClass = '';
 	      }
@@ -4309,7 +4315,18 @@ webpackJsonp([0],[
 	//   margin-top: 30px;
 	//   font-size:3rem;
 	// }
+	// .hideHeader{
+	//   transform:translateY(-107px);
+	//   .logo{
+	//       margin-top: 0.2rem;
+	//       margin-bottom: 0.2rem;      
+	//     }
+	//     .nav li>a{
+	//       margin-top: 0.2rem;
+	//     }
+	// }
 	// .stackHeader{
+	//     transform:translateY(0);
 	//     background: #2a2a2a;
 	//     -webkit-box-shadow: 0 0 10px #333;
 	//     -moz-box-shadow: 0 0 10px #333;
@@ -4336,6 +4353,9 @@ webpackJsonp([0],[
 	//   }
 	// }
 	// @media (max-width:768px){
+	//   .hideHeader{
+	//     transform:translateY(-51px);
+	//   }
 	//   .nav{
 	//     margin: 0;
 	//   }
@@ -4376,6 +4396,7 @@ webpackJsonp([0],[
 	// header{
 	//   position: fixed;
 	//   z-index: 2;
+	//   transition: all .5s linear;
 	// }
 	// </style>
 
