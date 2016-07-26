@@ -90,5 +90,8 @@ console.log(edition)    //2;
 ## 3.读取属性的特性
 
 目的： 就是读取属性的特性，知道属性是只读的还是可以更改的。
+
+```
 var description = Object.getOwnPropertyDescription(book,'_year');
 console.log(description.value)   //2004
+```
