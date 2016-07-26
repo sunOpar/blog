@@ -1,8 +1,8 @@
 <template>
   <header class="container" v-bind:class="headClass">
-  <!-- <div class="loadBar"> -->
-    <!-- <div class="progress"></div> -->
-  <!-- </div> -->
+  <div v-if="$loadingRouteData" class="loadBar">
+    <div class="progress"></div>
+  </div>
   <a href="#" class="col-sm-3 col-sm-push-1"><h1 class="logo">{{name}}</h1></a>
   <nav class="nav">
     <ul v-bind:class="fold">
@@ -15,7 +15,6 @@
   </nav>
   </header>
 </template>
-
 <script>
 export default {
   data () {
@@ -60,7 +59,7 @@ export default {
 .logo {
   color:#fff;
   margin-top: 30px;
-  font-size:3rem;
+  font-size:4rem;
 }
 .hideHeader{
   transform:translateY(-107px);
@@ -86,7 +85,7 @@ export default {
 .nav li>a{
   display: inline-block;
   color:#fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 30px;
   margin-right:0.1rem;
   margin-bottom: 10px;
@@ -104,7 +103,7 @@ export default {
     margin: 0;
   }
   .nav li>a{
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 0;
     padding: 1rem 0;
@@ -142,7 +141,7 @@ header{
   transition: all .5s linear;
 }
 .loadBar{
-height: 0.15rem;
+height: 1rem;
 position: fixed;
 left: 0;right: 0;
 }

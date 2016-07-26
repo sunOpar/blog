@@ -36,10 +36,10 @@ import '../filter/convertDate.js'
 <style lang="scss" scoped>
 @media(max-width:768px){
 	.artListContent .post-title{
-    font-size: 1.3rem;
+    font-size: 2rem;
 	}
 	.post-preview{
-		margin-left: 1rem;
+		margin-left: 2rem;
 	}
 }
 
@@ -70,7 +70,7 @@ import '../filter/convertDate.js'
 .post-date{
 	font-family: 'Lora', 'Times New Roman', serif;
 	color: #808080;
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-style: italic;
 }
 </style>

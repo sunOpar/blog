@@ -43,7 +43,10 @@ export default{
 		background-color: #fff;
 		margin:auto;
 		width: 80%;
-		
+	}
+
+	.articleBody{
+		padding: 2rem;
 	}
 	
 </style>
