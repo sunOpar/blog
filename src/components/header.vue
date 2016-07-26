@@ -1,8 +1,8 @@
 <template>
   <header class="container" v-bind:class="headClass">
-  <div class="loadBar">
-    <div class="progress"></div>
-  </div>
+  <!-- <div class="loadBar"> -->
+    <!-- <div class="progress"></div> -->
+  <!-- </div> -->
   <a href="#" class="col-sm-3 col-sm-push-1"><h1 class="logo">{{name}}</h1></a>
   <nav class="nav">
     <ul v-bind:class="fold">
