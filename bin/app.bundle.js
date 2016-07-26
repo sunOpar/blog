@@ -4289,13 +4289,8 @@ webpackJsonp([0],[
 	    var originY = 0;
 	    window.addEventListener('scroll', function () {
 	      if (window.scrollY > 10) {
-	        if (window.scrollY > originY) {
-	          originY = window.scrollY;
-	          // that.headClass = 'hideHeader';
-	        } else {
-	          originY = window.scrollY;
-	          that.headClass = 'stackHeader';
-	        }
+	        console.log(window.scrollY);
+	        that.headClass = 'stackHeader';
 	      } else {
 	        that.headClass = '';
 	      }
