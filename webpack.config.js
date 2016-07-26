@@ -4,7 +4,7 @@ var webpack = require('webpack');
 //node核心模块
 var path = require('path');
 // 提取出来的图片放到bin/css文件夹
-var extractCSS = new ExtractTextPlugin('[name].[hash].css');
+var extractCSS = new ExtractTextPlugin('[name].css');
 module.exports = {
 	// 入口点有两个，一个是app.js
 	// 另一个是venders.js包括第三方引用模块，这么做防止把第三方代码和自己的代码打包
@@ -17,7 +17,7 @@ module.exports = {
 	output:{
 		path:'./bin',
 		publicPath:'bin/',
-		filename:'[name].[hash].bundle.js'
+		filename:'[name].bundle.js'
 	},
 	// 方便打断点
 	devtool:"#source-map",
@@ -45,7 +45,7 @@ module.exports = {
 		    loaders: ["url-loader?limit=1000&name=assets/fonts/[name].[ext]"]
 		  },
 		  {test:/\.json$/,exclude:/node_modules/,
-		  	loaders: ["url-loader?limit=1000&name=assets/image/[name].[hash].[ext]"]
+		  	loaders: ["url-loader?limit=1000&name=assets/image/[name].[ext]"]
 		  }
 		]
 	},
@@ -54,7 +54,7 @@ module.exports = {
 	// 上面这样设置之后，Webpack会检测各个入口文件生成的代码，
 	// 如果里面引用的代码有出现在vendors列表里的话，
 	// 会被自动抽出来放到./js/vendors.[hash].js里。
-		new webpack.optimize.CommonsChunkPlugin('vendors','vendors.[hash].js'),
+		new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js'),
 		extractCSS,
 		// 自动生成html的页面，template为路径，目标可以加载到html里面
 		// title为文件title

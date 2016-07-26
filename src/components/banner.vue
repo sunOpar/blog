@@ -1,14 +1,14 @@
 <template>
 	<div class="banner" v-bind:style="styleObj">
 		<div class="jumbotron col-sm-offset-2 os-phrases">
-			<h1 class="introduce col-sm-12">{{intruduce}}</h1>
+			<h1 class="introduce col-sm-12">{{{intruduce | splitTitle}}}</h1>
 		</div>
 	</div>	
 </template>
 <script>
 require('../lib/fontAnimate/css/default.css')
 require('../lib/fontAnimate/css/component.css')
-require('../lib/fontAnimate/js/jquery.lettering.js')
+import '../filter/splitTitle.js'
 let bannerBg = require('../assets/img/code.jpg');
 export default {
 	data () {
@@ -26,10 +26,6 @@ export default {
 		window.addEventListener('resize',function(){
 			that.styleObj.height =document.body.scrollHeight+'px';
 		},false);
-	},
-	attached: function(){
-		console.log($('.jumbotron > h1').text());
-		$('.jumbotron > h1').lettering('words').children("span").lettering().children("span").lettering();
 	}
 }
 </script>

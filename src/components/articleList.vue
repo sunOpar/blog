@@ -21,7 +21,6 @@ import '../filter/convertDate.js'
 		},
 		methods:{
 			successCallback:function(res){
-				console.log(res);
 				this.items = res.data.articles.reverse();
 			}
 		},
@@ -71,7 +70,7 @@ import '../filter/convertDate.js'
 .post-date{
 	font-family: 'Lora', 'Times New Roman', serif;
 	color: #808080;
-    font-size: 19px;
+    font-size: 1rem;
     font-style: italic;
 }
 </style>
