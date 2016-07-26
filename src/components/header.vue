@@ -1,5 +1,8 @@
 <template>
   <header class="container" v-bind:class="headClass">
+  <div class="loadBar">
+    <div class="progress"></div>
+  </div>
   <a href="#" class="col-sm-3 col-sm-push-1"><h1 class="logo">{{name}}</h1></a>
   <nav class="nav">
     <ul v-bind:class="fold">
@@ -117,6 +120,8 @@ export default {
 }
 nav{
   z-index: 2;
+}
+nav,header{
   &:before{
     display: table;
     content: '';
@@ -124,19 +129,42 @@ nav{
   &:after{
     clear: both;
   }
+
 }
 li{
   display:inline-block;
   text-decoration: none;
   margin-right: 10px;
 }
-
-header:after{
-  clear:none;
-}
 header{
   position: fixed;
   z-index: 2;
   transition: all .5s linear;
+}
+.loadBar{
+height: 0.15rem;
+position: fixed;
+left: 0;right: 0;
+}
+.progress{
+  position: absolute;
+  height: 100%;
+  background-color: #0B346E;
+  animation: loading 1.2s linear infinite;
+}
+@keyframes loading{
+  0% {
+    left: 0;
+    right: 100%;
+  }
+
+  50% {
+    left: 0;
+    right: 0;
+  }
+  100% {
+    left: 100%;
+    right: 0;
+  }
 }
 </style>
