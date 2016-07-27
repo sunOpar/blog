@@ -4148,7 +4148,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1aac04c6/App.vue"
+	  var id = "_v-42930693/App.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4230,7 +4230,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7cc85ca2/header.vue"
+	  var id = "_v-8c2217b6/header.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4258,7 +4258,10 @@ webpackJsonp([0],[
 	//   <div v-if="$loadingRouteData" class="loadBar">
 	//     <div class="progress"></div>
 	//   </div>
-	//   <a href="#" class="col-sm-3 col-sm-push-1"><h1 class="logo">{{name}}</h1></a>
+	//   <a href="#" class="col-sm-3 col-sm-push-1 name">
+	//     <h1 class="logo">{{name}}</h1>
+	//     <h2 class="job">{{job}}</h2>
+	//   </a>
 	//   <nav class="nav">
 	//     <ul v-bind:class="fold">
 	//       <li role="presentation"><a href="#">{{home}}</a></li>
@@ -4276,6 +4279,7 @@ webpackJsonp([0],[
 	    return {
 	      homepage: 'http://www.sunopar.com/sunopar',
 	      name: 'SUNOPAR',
+	      job: 'web前端工程师',
 	      home: 'HOME',
 	      blog: 'BLOG',
 	      github: 'GITHUB',
@@ -4318,10 +4322,17 @@ webpackJsonp([0],[
 	//   float:right;
 	//   margin-right: 2rem;
 	// }
+	// .logo,.job{
+	//     color:#fff;
+	// }
 	// .logo {
-	//   color:#fff;
+	//
 	//   margin-top: 30px;
 	//   font-size:4rem;
+	//   margin-bottom: 1rem;
+	// }
+	// .job{
+	//   font-size:2rem;  
 	// }
 	// .hideHeader{
 	//   transform:translateY(-107px);
@@ -4376,6 +4387,11 @@ webpackJsonp([0],[
 	//   }
 	//   .logo{
 	//     font-size: 2rem;
+	//   }
+	//   .job{
+	//     font-size:1.2rem;  
+	//   }
+	//   .name{
 	//     display: none;
 	//   }
 	// }
@@ -4398,6 +4414,7 @@ webpackJsonp([0],[
 	//   margin-right: 10px;
 	// }
 	// header{
+	//   color:#fff;
 	//   position: fixed;
 	//   z-index: 2;
 	//   transition: all .5s linear;
@@ -4436,7 +4453,7 @@ webpackJsonp([0],[
 /* 14 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<header class=\"container\" v-bind:class=\"headClass\" _v-7cc85ca2=\"\">\n<div v-if=\"$loadingRouteData\" class=\"loadBar\" _v-7cc85ca2=\"\">\n  <div class=\"progress\" _v-7cc85ca2=\"\"></div>\n</div>\n<a href=\"#\" class=\"col-sm-3 col-sm-push-1\" _v-7cc85ca2=\"\"><h1 class=\"logo\" _v-7cc85ca2=\"\">{{name}}</h1></a>\n<nav class=\"nav\" _v-7cc85ca2=\"\">\n  <ul v-bind:class=\"fold\" _v-7cc85ca2=\"\">\n    <li role=\"presentation\" _v-7cc85ca2=\"\"><a href=\"#\" _v-7cc85ca2=\"\">{{home}}</a></li>\n    <li role=\"presentation\" _v-7cc85ca2=\"\"><a v-link=\"{path:'/blog'}\" _v-7cc85ca2=\"\">{{blog}}</a></li>\n    <li role=\"presentation\" _v-7cc85ca2=\"\"><a v-bind:href=\"githubUrl\" target=\"_blank\" _v-7cc85ca2=\"\">{{github}}</a></li>\n    <li role=\"presentation\" _v-7cc85ca2=\"\"><a v-link=\"{path:'/gallery'}\" _v-7cc85ca2=\"\">{{about}}</a></li>\n  </ul>\n  \n</nav>\n</header>\n";
+	module.exports = "\n<header class=\"container\" v-bind:class=\"headClass\" _v-8c2217b6=\"\">\n<div v-if=\"$loadingRouteData\" class=\"loadBar\" _v-8c2217b6=\"\">\n  <div class=\"progress\" _v-8c2217b6=\"\"></div>\n</div>\n<a href=\"#\" class=\"col-sm-3 col-sm-push-1 name\" _v-8c2217b6=\"\">\n  <h1 class=\"logo\" _v-8c2217b6=\"\">{{name}}</h1>\n  <h2 class=\"job\" _v-8c2217b6=\"\">{{job}}</h2>\n</a>\n<nav class=\"nav\" _v-8c2217b6=\"\">\n  <ul v-bind:class=\"fold\" _v-8c2217b6=\"\">\n    <li role=\"presentation\" _v-8c2217b6=\"\"><a href=\"#\" _v-8c2217b6=\"\">{{home}}</a></li>\n    <li role=\"presentation\" _v-8c2217b6=\"\"><a v-link=\"{path:'/blog'}\" _v-8c2217b6=\"\">{{blog}}</a></li>\n    <li role=\"presentation\" _v-8c2217b6=\"\"><a v-bind:href=\"githubUrl\" target=\"_blank\" _v-8c2217b6=\"\">{{github}}</a></li>\n    <li role=\"presentation\" _v-8c2217b6=\"\"><a v-link=\"{path:'/gallery'}\" _v-8c2217b6=\"\">{{about}}</a></li>\n  </ul>\n  \n</nav>\n</header>\n";
 
 /***/ },
 /* 15 */
@@ -4459,7 +4476,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-16b818c7/content.vue"
+	  var id = "_v-28c94511/content.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4530,7 +4547,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0e3f06ce/banner.vue"
+	  var id = "_v-06922944/banner.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4593,21 +4610,20 @@ webpackJsonp([0],[
 	// 	transition: all .3s ease;
 	// }
 	// .banner {
+	// 	background-attachment: fixed;
 	// 	background-repeat: no-repeat;
 	// 	background-size: 100% 100%;
 	// 	min-height: 300px;
 	// 	max-height:100%;
 	// 	position: relative;
 	// 	z-index: -1;
-	// 	animation: fade 5s;
+	// 	animation: fade 1.5s;
 	// }
 	// @keyframes fade{
 	// 	0%   {opacity: 0;}
 	// 	50%  {opacity:0.5;}
 	// 	100% {opacity:1;}
 	// }
-	//
-	//
 	// .introduce{
 	// 	color:#fff;
 	// 	position: absolute;
@@ -4705,13 +4721,13 @@ webpackJsonp([0],[
 /* 28 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"banner\" transtion=\"bannerT\" v-bind:style=\"styleObj\" _v-0e3f06ce=\"\">\n\t<div class=\"jumbotron col-sm-offset-2 os-phrases\" _v-0e3f06ce=\"\">\n\t\t<h1 class=\"introduce col-sm-12\" _v-0e3f06ce=\"\">{{{intruduce | splitTitle}}}</h1>\n\t</div>\n</div>\t\n";
+	module.exports = "\n<div class=\"banner\" transtion=\"bannerT\" v-bind:style=\"styleObj\" _v-06922944=\"\">\n\t<div class=\"jumbotron col-sm-offset-2 os-phrases\" _v-06922944=\"\">\n\t\t<h1 class=\"introduce col-sm-12\" _v-06922944=\"\">{{{intruduce | splitTitle}}}</h1>\n\t</div>\n</div>\t\n";
 
 /***/ },
 /* 29 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"content\" _v-16b818c7=\"\">\n\t<router-view _v-16b818c7=\"\"></router-view>\n</div>\n";
+	module.exports = "\n<div class=\"content\" _v-28c94511=\"\">\n\t<router-view _v-28c94511=\"\"></router-view>\n</div>\n";
 
 /***/ },
 /* 30 */
@@ -4740,7 +4756,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-a46371c0/gallery.vue"
+	  var id = "_v-8041192c/gallery.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4806,7 +4822,7 @@ webpackJsonp([0],[
 /* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"about\" _v-a46371c0=\"\">\n\t<div class=\"gallery\" v-bind:style=\"styleObj\" _v-a46371c0=\"\">\n\t</div>\n</div>\n";
+	module.exports = "\n<div class=\"about\" _v-8041192c=\"\">\n\t<div class=\"gallery\" v-bind:style=\"styleObj\" _v-8041192c=\"\">\n\t</div>\n</div>\n";
 
 /***/ },
 /* 36 */
@@ -4829,7 +4845,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-76cc7278/blog.vue"
+	  var id = "_v-6dc1e28c/blog.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4908,7 +4924,7 @@ webpackJsonp([0],[
 /* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"blogWrap\" _v-76cc7278=\"\">\n<div class=\"blogHeader\" v-bind:style=\"blogStyle\" _v-76cc7278=\"\"></div>\n\t<router-view _v-76cc7278=\"\"></router-view>\n</div>\n";
+	module.exports = "\n<div class=\"blogWrap\" _v-6dc1e28c=\"\">\n<div class=\"blogHeader\" v-bind:style=\"blogStyle\" _v-6dc1e28c=\"\"></div>\n\t<router-view _v-6dc1e28c=\"\"></router-view>\n</div>\n";
 
 /***/ },
 /* 41 */
@@ -4931,7 +4947,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4406ca82/articleList.vue"
+	  var id = "_v-55b4c1cc/articleList.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5103,7 +5119,7 @@ webpackJsonp([0],[
 /* 46 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"artListContent container\" _v-4406ca82=\"\">\n\t<div class=\"blogBody\" _v-4406ca82=\"\">\n\t\t<div class=\"row\" _v-4406ca82=\"\">\n\t\t\t<section v-for=\"item in items\" class=\"post-preview col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2\" _v-4406ca82=\"\">\n\t\t\t\t<a v-link=\"{path:item.url,append:true}\" _v-4406ca82=\"\"><h2 class=\"post-title\" _v-4406ca82=\"\">{{item.title}}</h2></a>\n\t\t\t\t<p class=\"post-date\" _v-4406ca82=\"\">{{item.date | convertDate}}</p>\n\t\t\t</section>\n\t\t</div>\n\t</div>\n</div>\n";
+	module.exports = "\n<div class=\"artListContent container\" _v-55b4c1cc=\"\">\n\t<div class=\"blogBody\" _v-55b4c1cc=\"\">\n\t\t<div class=\"row\" _v-55b4c1cc=\"\">\n\t\t\t<section v-for=\"item in items\" class=\"post-preview col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2\" _v-55b4c1cc=\"\">\n\t\t\t\t<a v-link=\"{path:item.url,append:true}\" _v-55b4c1cc=\"\"><h2 class=\"post-title\" _v-55b4c1cc=\"\">{{item.title}}</h2></a>\n\t\t\t\t<p class=\"post-date\" _v-55b4c1cc=\"\">{{item.date | convertDate}}</p>\n\t\t\t</section>\n\t\t</div>\n\t</div>\n</div>\n";
 
 /***/ },
 /* 47 */
@@ -5126,7 +5142,7 @@ webpackJsonp([0],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5eaf2ac4/article.vue"
+	  var id = "_v-70c0570e/article.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5267,13 +5283,13 @@ webpackJsonp([0],[
 /* 53 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"articleWrap container\" _v-5eaf2ac4=\"\">\n\t<div v-if=\"$loadingRouteData\" class=\"progress\" _v-5eaf2ac4=\"\">loading</div>\n\t<div class=\"articleBody\" _v-5eaf2ac4=\"\">{{{article | trimLine |marked}}}</div>\n</div>\n";
+	module.exports = "\n<div class=\"articleWrap container\" _v-70c0570e=\"\">\n\t<div v-if=\"$loadingRouteData\" class=\"progress\" _v-70c0570e=\"\">loading</div>\n\t<div class=\"articleBody\" _v-70c0570e=\"\">{{{article | trimLine |marked}}}</div>\n</div>\n";
 
 /***/ },
 /* 54 */
 /***/ function(module, exports) {
 
-	module.exports = "<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta charset=\"utf-8\">\r\n    <meta http-equiv=\"content-Type\" content=\"text/html\">\r\n    <meta http-equiv=\"Window-target\" content=\"_top\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\r\n    <meta name=\"author\" content=\"sunOpar\">\r\n    <meta name=\"description\" content=\"前端技术博客，分享前端html+css+javascript以及其它前端知识\">\r\n    <meta name=\"keywords\" content=\"html,css,javacript,vue,webapck,前端,博客,nodejs,angular,react\">\r\n    <title>sunopar's World</title>\r\n  <link href=\"bin/app.css\" rel=\"stylesheet\"></head>\r\n  <body>\r\n    <app></app>\r\n  <script type=\"text/javascript\" src=\"bin/vendors.js\"></script><script type=\"text/javascript\" src=\"bin/app.bundle.js\"></script></body>\r\n</html>\r\n"
+	module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"content-Type\" content=\"text/html\">\n    <meta http-equiv=\"Window-target\" content=\"_top\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\n    <meta name=\"author\" content=\"sunOpar\">\n    <meta name=\"description\" content=\"前端技术博客，分享前端html+css+javascript以及其它前端知识\">\n    <meta name=\"keywords\" content=\"html,css,javacript,vue,webapck,前端,博客,nodejs,angular,react\">\n    <title>sunopar's World</title>\n  <link href=\"bin/app.css\" rel=\"stylesheet\"></head>\n  <body>\n    <app></app>\n  <script type=\"text/javascript\" src=\"bin/vendors.js\"></script><script type=\"text/javascript\" src=\"bin/app.bundle.js\"></script></body>\n</html>\n"
 
 /***/ }
 ]);
