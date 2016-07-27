@@ -24,7 +24,7 @@ import '../filter/convertDate.js'
 				this.items = res.data.articles.reverse();
 			}
 		},
-		created:function(){
+		created(){
 			this.$http.get(articleList)
 			.then(this.successCallback)
 			.catch((res)=>{

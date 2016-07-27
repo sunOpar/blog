@@ -34,21 +34,20 @@ export default {
 	transition: all .3s ease;
 }
 .banner {
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	min-height: 300px;
 	max-height:100%;
 	position: relative;
 	z-index: -1;
-	animation: fade 5s;
+	animation: fade 1.5s;
 }
 @keyframes fade{
 	0%   {opacity: 0;}
 	50%  {opacity:0.5;}
 	100% {opacity:1;}
 }
-
-
 .introduce{
 	color:#fff;
 	position: absolute;
