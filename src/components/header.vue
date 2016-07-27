@@ -3,7 +3,10 @@
   <div v-if="$loadingRouteData" class="loadBar">
     <div class="progress"></div>
   </div>
-  <a href="#" class="col-sm-3 col-sm-push-1"><h1 class="logo">{{name}}</h1></a>
+  <a href="#" class="col-sm-3 col-sm-push-1 name">
+    <h1 class="logo">{{name}}</h1>
+    <h2 class="job">{{job}}</h2>
+  </a>
   <nav class="nav">
     <ul v-bind:class="fold">
       <li role="presentation"><a href="#">{{home}}</a></li>
@@ -21,6 +24,7 @@ export default {
     return {
       homepage:'http://www.sunopar.com/sunopar',
       name:'SUNOPAR',
+      job:'web前端工程师',
       home:'HOME',
       blog:'BLOG',
       github:'GITHUB',
@@ -62,10 +66,17 @@ export default {
   float:right;
   margin-right: 2rem;
 }
+.logo,.job{
+    color:#fff;
+}
 .logo {
-  color:#fff;
+
   margin-top: 30px;
   font-size:4rem;
+  margin-bottom: 1rem;
+}
+.job{
+  font-size:2rem;  
 }
 .hideHeader{
   transform:translateY(-107px);
@@ -120,6 +131,11 @@ export default {
   }
   .logo{
     font-size: 2rem;
+  }
+  .job{
+    font-size:1.2rem;  
+  }
+  .name{
     display: none;
   }
 }
@@ -142,6 +158,7 @@ li{
   margin-right: 10px;
 }
 header{
+  color:#fff;
   position: fixed;
   z-index: 2;
   transition: all .5s linear;
