@@ -69,4 +69,4 @@ var write = (obj,ws)=>{
 }
 }
 
-travel(path.join(__dirname,'../../_posts'),path.join(__dirname,'../../data/articleList.json'));
+travel(path.join(__dirname,'../../_posts'),path.join(__dirname,'../assets/data/articleList.json'));

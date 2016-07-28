@@ -45,7 +45,7 @@ module.exports = {
 		    loaders: ["url-loader?limit=1000&name=assets/fonts/[name].[ext]"]
 		  },
 		  {test:/\.json$/,exclude:/node_modules/,
-		  	loaders: ["url-loader?limit=1000&name=assets/image/[name].[ext]"]
+		  	loaders: ["url-loader?limit=1000&name=assets/data/[name].[ext]"]
 		  }
 		]
 	},

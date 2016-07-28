@@ -22,13 +22,13 @@
 			"title": "用健身的思维来对待学习",
 			"categories": "[我说学习]",
 			"date": "2016-01-15",
-			"url":"2016-01-15-fitness"
+			"url": "2016-01-15-fitness"
 		},
 		{
 			"title": "博客诞生日",
 			"categories": "[心路历程]",
 			"date": "2016-01-26",
-			"url":"2016-01-26-my-first-blog"
+			"url": "2016-01-26-my-first-blog"
 		},
 		{
 			"title": "javaScript基础笔记集合",
@@ -55,22 +55,22 @@
 			"url": "2016-02-04-counter"
 		},
 		{
-			"title": "双飞翼布局介绍",
-			"categories": "[html与css]",
-			"date": "2016-02-07",
-			"url": "2016-02-07-double-wings"
-		},
-		{
 			"title": "请先点我！",
 			"categories": "[我说学习]",
 			"date": "2016-02-04",
 			"url": "2016-02-04-project-guidance"
 		},
 		{
+			"title": "双飞翼布局介绍",
+			"categories": "[html与css]",
+			"date": "2016-02-07",
+			"url": "2016-02-07-double-wings"
+		},
+		{
 			"title": "常用meta整理",
 			"categories": "[html与css]",
 			"date": "2016-02-09",
-			"url":"2016-02-09-common-mtea"
+			"url": "2016-02-09-common-mtea"
 		},
 		{
 			"title": "我",
@@ -241,16 +241,16 @@
 			"url": "2016-07-05-front-end-face-question"
 		},
 		{
-			"title": "模块化加载-require.js",
-			"categories": "[前端工程化]",
-			"date": "2016-07-07",
-			"url": "2016-07-07-module-load"
-		},
-		{
 			"title": "yeoman-bower-grunt之间的关系",
 			"categories": "[前端工程化]",
 			"date": "2016-07-08",
 			"url": "2016-07-08-yeoman-bower-grunt"
+		},
+		{
+			"title": "模块化加载-require.js",
+			"categories": "[前端工程化]",
+			"date": "2016-07-07",
+			"url": "2016-07-07-module-load"
 		},
 		{
 			"title": "webpack之如何配置实时更新",
@@ -263,6 +263,12 @@
 			"categories": "[前端工程化]",
 			"date": "2016-07-16",
 			"url": "2016-07-16-vue-date-watch-theory"
+		},
+		{
+			"title": "什么东西只花十分钟，但是受益终身[译]",
+			"categories": "[Quora]",
+			"date": "2016-07-28",
+			"url": "2016-07-28-cost-ten-minusts-useful-rest-of-life"
 		}
 	]
 }
