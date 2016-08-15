@@ -42,12 +42,7 @@ export default {
 	position: relative;
 	z-index: -1;
 	animation: fade 1.5s;
- filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
-    
-    -webkit-filter: blur(10px); /* Chrome, Opera */
-       -moz-filter: blur(10px);
-        -ms-filter: blur(10px);    
-            filter: blur(10px);
+
  }
 @keyframes fade{
 	0%   {opacity: 0;}

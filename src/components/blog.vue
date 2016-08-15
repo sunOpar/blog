@@ -35,5 +35,10 @@ $bgHeight:250px;
 		background-size: 100% 100%;
 		background-position: center;
 		background-repeat: no-repeat;
+
+    -webkit-filter: blur(2px); /* Chrome, Opera */
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);    
+            filter: blur(2px);
 	}
 </style>

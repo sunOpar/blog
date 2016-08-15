@@ -23,6 +23,10 @@ let img = require('../assets/img/gallery.jpg');
 		background-size: 100% 350px;
 		background-repeat: no-repeat;
 
+		-webkit-filter: blur(1px); /* Chrome, Opera */
+       -moz-filter: blur(1px);
+        -ms-filter: blur(1px);    
+            filter: blur(1px);
 	}
 	.about{
 		height: 100%;
