@@ -54,7 +54,7 @@ export default{
 	.articleWrap{
 		background-color: #fff;
 		margin:auto;
-		width: 80%;
+		width: 700px;
 	}
 
 	.articleBody{

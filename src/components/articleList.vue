@@ -46,6 +46,7 @@ import '../filter/convertDate.js'
 .artListContent{
 	background-color: #fff;
 	color:#000;
+	width: 700px;
 	.post-preview{
 		padding-bottom: 20px;
 		padding-top: 20px;
