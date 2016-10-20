@@ -1,5 +1,7 @@
 # sunopar's world
 
+项目正迁移vue2中，敬请期待...
+
 ## version
 
 ### v1.0.1
