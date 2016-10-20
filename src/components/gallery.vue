@@ -30,6 +30,6 @@ let img = require('../assets/img/gallery.jpg');
 	}
 	.about{
 		height: 100%;
-		background-color: #fff;
+		background-color: #000;
 	}
 </style>
