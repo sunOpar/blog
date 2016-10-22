@@ -25,7 +25,7 @@ import '../filter/convertDate.js'
 			}
 		},
 		created(){
-			this.$http.get(articleList)
+			this.$http.get('bin/data/articleList.json')
 			.then(this.successCallback)
 			.catch((res)=>{
 				console.log(res);
