@@ -5,7 +5,7 @@
     <h2 class="job">{{job}}</h2>
   </a>
   <nav class="nav">
-    <ul v-bind:class="fold">
+    <ul class="fold">
       <li role="presentation"><a href="#">{{home}}</a></li>
       <li role="presentation"><router-link :to="{path:'/blog'}" >{{blog}}</router-link></li>
       <li role="presentation"><a v-bind:href="githubUrl" target="_blank">{{github}}</a></li>

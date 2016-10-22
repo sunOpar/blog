@@ -16,14 +16,18 @@ Vue.use(VueRouter)
 
 var router = new VueRouter({
   routes: [
-    { path: '/', component: banner },
-    { path: '/gallery', component: gallery },
-	{ path: '/blog', component: blog,
-	  children:[
-		  { path: '/', component: articleList},
-		  { path: '/:articleName', component: article}
-	  ]
-	},
+    { path: '/', component: App ,
+      children:[
+      { path:'/',component: banner},
+      { path: '/gallery', component: gallery },
+      { path: '/blog', component: blog,
+        children:[
+          { path: '/', component: articleList},
+          { path: '/:articleName', component: article}
+        ]
+      },  
+      ]
+    },
 	{ path: '*', redirect:'/'}
   ]
 })

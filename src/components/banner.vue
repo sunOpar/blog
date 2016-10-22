@@ -1,14 +1,14 @@
 <template>
 	<div class="banner" transtion="bannerT" v-bind:style="styleObj">
 		<div class="jumbotron col-sm-offset-2 os-phrases">
-			<h1 class="introduce col-sm-12" v-html="intruduce | splitTitle"></h1>
+			<h1 class="introduce col-sm-12" v-html="thisIntruduce"></h1>
 		</div>
 	</div>	
 </template>
 <script>
 require('../lib/fontAnimate/css/default.css')
 require('../lib/fontAnimate/css/component.css')
-import  '../filter/splitTitle.js'
+import splitTitle from  '../filter/splitTitle.js'
 let bannerBg = require('../assets/img/code.jpg');
 export default {
 	data () {
@@ -19,6 +19,11 @@ export default {
 
 			},
 			intruduce:'WELCOME TO MY WORLD'
+		}
+	},
+	computed:{
+		thisIntruduce:function(){
+			return splitTitle(this.intruduce)
 		}
 	},
 	mounted:function(){
