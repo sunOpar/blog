@@ -15,7 +15,7 @@ export default {
 		return {
 			styleObj:{
 				height:document.body.scrollHeight+'px',
-				backgroundImage:'url('+bannerBg+')',
+				backgroundImage:'url(bin/bound/code.jpg)',
 
 			},
 			intruduce:'WELCOME TO MY WORLD'

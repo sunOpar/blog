@@ -11,7 +11,7 @@
 </div>
 </template>
 <script>
-let articleList= require("../../data/articleList.json");
+let articleList= require("../../bin/data/articleList.json");
 import '../filter/convertDate.js'
 	export default{
 		data(){
