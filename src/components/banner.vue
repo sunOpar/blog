@@ -1,27 +1,32 @@
 <template>
 	<div class="banner" transtion="bannerT" v-bind:style="styleObj">
 		<div class="jumbotron col-sm-offset-2 os-phrases">
-			<h1 class="introduce col-sm-12">{{{intruduce | splitTitle}}}</h1>
+			<h1 class="introduce col-sm-12" v-html="thisIntruduce"></h1>
 		</div>
 	</div>	
 </template>
 <script>
 require('../lib/fontAnimate/css/default.css')
 require('../lib/fontAnimate/css/component.css')
-import '../filter/splitTitle.js'
+import splitTitle from  '../filter/splitTitle.js'
 let bannerBg = require('../assets/img/code.jpg');
 export default {
 	data () {
 		return {
 			styleObj:{
 				height:document.body.scrollHeight+'px',
-				backgroundImage:'url('+bannerBg+')',
+				backgroundImage:'url(bin/bound/code.jpg)',
 
 			},
 			intruduce:'WELCOME TO MY WORLD'
 		}
 	},
-	ready:function(){
+	computed:{
+		thisIntruduce:function(){
+			return splitTitle(this.intruduce)
+		}
+	},
+	mounted:function(){
 		var that = this;
 		window.addEventListener('resize',function(){
 			that.styleObj.height =document.body.scrollHeight+'px';

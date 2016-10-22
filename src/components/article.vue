@@ -1,7 +1,6 @@
 <template>
 	<div class="articleWrap container">
-		<div v-if="$loadingRouteData" class="progress">loading</div>
-		<div class="articleBody">{{{article | trimLine |marked}}}</div class="articleBody">
+		<div class="articleBody" v-for="article in trimLine in marked">{{article}}</div class="articleBody">
 	</div>
 </template>
 <script>
@@ -31,7 +30,6 @@ export default{
 	route:{
 	    data:function(transition){
 	      console.log('data钩子');
-	      // console.log('loading:',$loadingRouteData);
 	      transition.next();
 	    }
   	}

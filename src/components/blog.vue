@@ -12,7 +12,7 @@ export default {
 	data(){
 		return{
 			blogStyle:{
-				backgroundImage:'url('+bg+')'
+				backgroundImage:'url(bin/bound/blog.jpg)'
 			},
 		}
 	},

@@ -1,18 +1,15 @@
 <template>
   <header class="container" v-bind:class="headClass">
-  <div v-if="$loadingRouteData" class="loadBar">
-    <div class="progress"></div>
-  </div>
   <a href="#" class="col-sm-3 col-sm-push-1 name">
     <h1 class="logo">{{name}}</h1>
     <h2 class="job">{{job}}</h2>
   </a>
   <nav class="nav">
-    <ul v-bind:class="fold">
+    <ul class="fold">
       <li role="presentation"><a href="#">{{home}}</a></li>
-      <li role="presentation"><a v-link="{path:'/blog'}" >{{blog}}</a></li>
+      <li role="presentation"><router-link :to="{path:'/blog'}" >{{blog}}</router-link></li>
       <li role="presentation"><a v-bind:href="githubUrl" target="_blank">{{github}}</a></li>
-      <li role="presentation"><a v-link="{path:'/gallery'}">{{about}}</a></li>
+      <li role="presentation"><router-link :to="{path:'/gallery'}">{{about}}</router-link></li>
     </ul>
     
   </nav>
@@ -34,7 +31,7 @@ export default {
       headClass:''
     }
   },
-  ready: function(){
+  mounted: function(){
     var that = this;
     var originY = 0;
     window.addEventListener('scroll',function(){
@@ -50,12 +47,6 @@ export default {
         that.headClass='';
       }
     },false);
-  },
-  route:{
-    data:function(transition){
-      console.log('data钩子');
-      console.log('loading:',transtion.$loadingRouteData);
-    }
   }
 }
 </script>

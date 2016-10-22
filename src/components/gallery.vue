@@ -11,7 +11,7 @@ let img = require('../assets/img/gallery.jpg');
 			return {
 				gallery:'gallery',
 				styleObj:{
-					backgroundImage:'url('+img+')'
+					backgroundImage:'url(bin/bound/gallery.jpg)'
 				}
 			}
 		}

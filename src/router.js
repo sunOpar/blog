@@ -11,28 +11,29 @@ import article from './components/article.vue'
 // 注册两个插件
 Vue.use(VueResource)
 Vue.use(VueRouter)
-const router = new VueRouter()
+// const router = new VueRouter()
 // 路由map
-router.map({
-	'/':{
-		component:banner
-		},
-	'/gallery':{
-		component:gallery
-	},
-	'/blog':{
-		component:blog,
-		subRoutes:{
-			"/":{
-			component:articleList
-			},
-			"/:articleName":{
-				component:article
-			}	
-		}
-	}
+
+var router = new VueRouter({
+  routes: [
+    { path: '/', component: App ,
+      children:[
+      { path:'/',component: banner},
+      { path: '/gallery', component: gallery },
+      { path: '/blog', component: blog,
+        children:[
+          { path: '/', component: articleList},
+          { path: '/:articleName', component: article}
+        ]
+      },  
+      ]
+    },
+	{ path: '*', redirect:'/'}
+  ]
 })
-router.redirect({
-	'*':'/'
+new Vue({
+	el:'app',
+	router:router,
+	render: h => h('router-view')
 })
-router.start(App,'app')
+

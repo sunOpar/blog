@@ -3,7 +3,7 @@
 	<div class="blogBody">
 		<div class="row">
 			<section v-for="item in items" class="post-preview col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
-				<a v-link="{path:item.url,append:true}"><h2 class="post-title">{{item.title}}</h2></a>
+				<router-link to="{path:item.url,append:true}"><h2 class="post-title">{{item.title}}</h2></router-link>
 				<p class="post-date">{{item.date | convertDate}}</p>
 			</section>
 		</div>
@@ -11,7 +11,7 @@
 </div>
 </template>
 <script>
-let articleList= require("../../data/articleList.json");
+let articleList= require("../../bin/data/articleList.json");
 import '../filter/convertDate.js'
 	export default{
 		data(){
