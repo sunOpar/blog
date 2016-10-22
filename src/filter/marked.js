@@ -1,7 +1,6 @@
 const marked = require('marked');
-import vue from 'vue'
-vue.filter('marked',(value)=>{
+export default (value)=>{
 	if(value){
 	  return marked(value);
 	}
-})
+}

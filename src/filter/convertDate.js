@@ -1,11 +1,10 @@
-import vue from 'vue'
-vue.filter('convertDate',(value)=>{
+export default (value)=>{
 	var arr = value.split('-');
 	arr[2] = convertDay(arr[2])+' ';
 	arr[1] = convertMonth(arr[1])+' ';
 	var newArr = arr[1].concat(arr[2],arr[0]);
 	return newArr;
-});
+}
 var convertDay = (value)=>{
 	switch(value){
 		case '01':

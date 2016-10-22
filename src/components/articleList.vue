@@ -2,9 +2,9 @@
 <div class="artListContent container">
 	<div class="blogBody">
 		<div class="row">
-			<section v-for="item in items" class="post-preview col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
-				<router-link to="{path:item.url,append:true}"><h2 class="post-title">{{item.title}}</h2></router-link>
-				<p class="post-date">{{item.date | convertDate}}</p>
+			<section v-for="item in thisItems" class="post-preview col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
+				<router-link :to="{path:item.url,append:true}"><h2 class="post-title">{{item.title}}</h2></router-link>
+				<p class="post-date">{{item.date}}</p>
 			</section>
 		</div>
 	</div>
@@ -12,11 +12,22 @@
 </template>
 <script>
 let articleList= require("../../bin/data/articleList.json");
-import '../filter/convertDate.js'
+import convertDate from '../filter/convertDate.js'
 	export default{
 		data(){
 			return {
 				items:[]
+			}
+		},
+		computed:{
+			thisItems:function(){
+				if(this.items.length>0){
+					this.items.map(ele=>{
+						ele.date = convertDate(ele.date)
+						return ele
+					})
+				}
+				return this.items
 			}
 		},
 		methods:{

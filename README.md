@@ -113,17 +113,22 @@ banner，gallery，blog的配置使用vue-router配置
 **example：**
 ```
 // 路由map
-router.map({
-	'/':{
-		component:banner
-		},
-	'/gallery':{
-		component:gallery
-	}
-	
+var router = new VueRouter({
+  routes: [
+    { path: '/', component: App ,
+      children:[
+      { path:'/',component: banner},
+      { path: '/gallery', component: gallery },
+      { path: '/blog', component: blog,
+        children:[
+          { path: '/', component: articleList},
+          { path: '/:articleName', component: article}
+        ]
+      }
+      ]
+    }
+  ]
 })
-router.start(App,'app')
-```
 ### `publish.js`
 
 该文件是用来遍历所有`_posts`目录里的博客，截取该博客里的
