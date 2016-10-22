@@ -1,5 +1,5 @@
 import vue from 'vue'
-vue.filter('splitTitle',(value)=>{
+export default vue.filter('splitTitle',(value)=>{
 	let word = value.split(' ');
 	let char = word.map((currentV,index)=>{
 		return currentV.split('');
