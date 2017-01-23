@@ -23,21 +23,21 @@ module.exports = {
 	// 方便打断点
 	devtool:"#source-map",
 	module:{
-		loaders:[
+		rules:[
 			//加载vue 
-		  {test:/\.vue$/,exclude:/node_modules/,loader:'vue'},
+		  {test:/\.vue$/,exclude:/node_modules/,loader:'vue-loader'},
 		  // 加载css并打包
  		  { test: /\.css$/,
  		  	exclude:/node_modules/,
  		  	loader: extractCSS.extract("style", "css")
  		  },
           // 加载babel
-    	  {test:/\.jsx?$/,exclude:/node_modules/,loader:"babel"},
+    	  {test:/\.jsx?$/,exclude:/node_modules/,loader:"babel-loader"},
     	  // 加载html
           {test:/\.html$/,exclude:/node_modules/,loader:"raw-loader"},
           // 加载sass
           {test:/\.(scss|sass)$/i,exclude:/node_modules/,
-          	loader:extractCSS.extract(['css','sass'])
+          	loader:extractCSS.extract(['css-loader','sass-loader'])
           },
           // 图片文件使用 url-loader 来处理，小于8kb的直接转为base64,超过就会输出到output的path
 		  {test:/\.(png|jpe?g|gif)$/,exclude:/node_modules/,loader: 'url-loader?limit=1024&name=[name].[ext]'},
@@ -45,9 +45,6 @@ module.exports = {
 		  { test: /\.(woff2|woff|ttf|eot|svg|otf)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 		    loaders: ["url-loader?limit=1000&name=assets/fonts/[name].[ext]"]
 		  },
-		  {test:/\.json$/,exclude:/node_modules/,
-		  	loaders: ["url-loader?limit=1000&name=assets/data/[name].[ext]"]
-		  }
 		]
 	},
 	
