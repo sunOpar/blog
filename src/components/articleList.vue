@@ -11,78 +11,79 @@
 </div>
 </template>
 <script>
-let articleList= require("../../bin/data/articleList.json");
-import convertDate from '../filter/convertDate.js'
-	export default{
-		data(){
-			return {
-				items:[]
-			}
-		},
-		computed:{
-			thisItems:function(){
-				if(this.items.length>0){
-					this.items.map(ele=>{
-						ele.date = convertDate(ele.date)
-						return ele
-					})
-				}
-				return this.items
-			}
-		},
-		methods:{
-			successCallback:function(res){
-				this.items = res.data.articles.reverse();
-			}
-		},
-		created(){
-			this.$http.get('bin/data/articleList.json')
-			.then(this.successCallback)
-			.catch((res)=>{
-				console.log(res);
-			})
-		}
-	}
+let articleList = require("../../bin/data/articleList.json");
+import convertDate from "../filter/convertDate.js";
+export default {
+  data() {
+    return {
+      items: [],
+    };
+  },
+  computed: {
+    thisItems: function() {
+      if (this.items.length > 0) {
+        this.items.map(ele => {
+          ele.date = convertDate(ele.date);
+          return ele;
+        });
+      }
+      return this.items;
+    },
+  },
+  methods: {
+    successCallback: function(res) {
+      this.items = res.data.articles.reverse();
+    },
+  },
+  created() {
+    this.$http
+      .get("bin/data/articleList.json")
+      .then(this.successCallback)
+      .catch(res => {
+        console.log(res);
+      });
+  },
+};
 </script>
-<style lang="scss" scoped>
-@media(max-width:768px){
-	.artListContent .post-title{
+<style lang="less" scoped>
+@media (max-width: 768px) {
+  .artListContent .post-title {
     font-size: 2rem;
-	}
-	.post-preview{
-		margin-left: 2rem;
-	}
+  }
+  .post-preview {
+    margin-left: 2rem;
+  }
 }
 
-.artListContent{
-	background-color: #fff;
-	color:#000;
-	width: 700px;
-	.post-preview{
-		padding-bottom: 20px;
-		padding-top: 20px;
-		border-bottom: 1px solid #eee;
-	}
+.artListContent {
+  background-color: #fff;
+  color: #000;
+  width: 700px;
+  .post-preview {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #eee;
+  }
 }
-.post-preview a{
-	&:hover{
-		text-decoration: none;
-	}
+.post-preview a {
+  &:hover {
+    text-decoration: none;
+  }
 }
-.post-title{
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 800;
-	color:#000;
-	font-size: 30px;
-	&:hover{
-		color:#23527c;
-		text-decoration: none;
-	}
+.post-title {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  color: #000;
+  font-size: 30px;
+  &:hover {
+    color: #23527c;
+    text-decoration: none;
+  }
 }
-.post-date{
-	font-family: 'Lora', 'Times New Roman', serif;
-	color: #808080;
-    font-size: 1.8rem;
-    font-style: italic;
+.post-date {
+  font-family: "Lora", "Times New Roman", serif;
+  color: #808080;
+  font-size: 1.8rem;
+  font-style: italic;
 }
 </style>

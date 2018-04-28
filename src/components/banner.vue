@@ -34,7 +34,7 @@ export default {
 	}
 }
 </script>
-<style scoped lang="scss">
+<style scoped lang="less">
 .bannerT-transtion{
 	transition: all .3s ease;
 }

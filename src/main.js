@@ -1,4 +1,4 @@
 require('./index.html')
-import './common.scss'
+import './common.less'
 import './router.js'
 

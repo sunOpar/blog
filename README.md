@@ -45,7 +45,7 @@
 - [Vue](http://vuejs.org.cn/)
 - [Vue-router](https://github.com/vuejs/vue-router)---路由管理
 - [Vue-source](https://github.com/vuejs/vue-resource)---Ajax管理
-- [SASS](http://www.w3cplus.com/sassguide/)
+- [less](http://lesscss.org/)
 - [ES6](http://www.es6js.com/)---使用bebel编译
 
 ## 前端详解

@@ -35,7 +35,7 @@ export default{
   	}
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .progress{
 	color:black;
 	font-size: 6rem;

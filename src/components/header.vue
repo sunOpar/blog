@@ -52,7 +52,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .nav{
   float:right;
   margin-right: 2rem;

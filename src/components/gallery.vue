@@ -17,7 +17,7 @@ let img = require('../assets/img/gallery.jpg');
 		}
 	}
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 	.gallery{
 		height: 300px;
 		background-size: 100% 350px;
