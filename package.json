@@ -5,12 +5,12 @@
   "author": "sunopar <xygjsj@139.com>",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --colors --port 880",
     "publish": "node bin/publish/publish.js",
-    "dev": "webpack-dev-server --inline --hot --colors --port 8080",
+    "start": "webpack-dev-server --inline --hot --colors --port 8080",
     "build": "rimraf ./bin/bound && webpack -p"
   },
   "dependencies": {
+    "vue": "^2.5.16",
     "vue-router": "^2.0.1"
   },
   "devDependencies": {
@@ -33,7 +33,6 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "vue": "^2.0.0",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^9.0.0",
