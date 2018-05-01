@@ -1,92 +1,94 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var webpack = require("webpack");
-//node核心模块
-var path = require("path");
-// 提取出来的图片放到bin/css文件夹
-var extractCSS = new ExtractTextPlugin("[name].css");
-module.exports = {
-  // 入口点有两个，一个是app.js
-  // 另一个是venders.js包括第三方引用模块，这么做防止把第三方代码和自己的代码打包
-  entry: {
-    app: "./src/main.js",
-    vendors: ["vue", "marked"],
-  },
-  // 生成的文件名为app.[hash].bundle.js
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
+const webpack = require("webpack");
 
+const devMode = process.env.NODE_ENV !== "production";
+
+module.exports = {
+  mode:process.env.NODE_ENV,
+  entry: {
+    app: path.resolve(__dirname,'src/main.js'),
+  },
   output: {
-    path: "./bin/bound",
+    path: path.resolve(__dirname, "bin"),
     filename: "[name].bundle.[hash].js",
   },
   // 方便打断点
   devtool: "#source-map",
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true, // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  },
   module: {
-    loaders: [
+    rules: [
       //加载vue
-      { test: /\.vue$/, exclude: /node_modules/, loader: "vue" },
+      { test: /\.vue$/, exclude: /node_modules/, loader: "vue-loader" },
       // 加载css并打包
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: extractCSS.extract("style", "css"),
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "vue-style-loader",
+          "css-loader",
+        ],
       },
       // 加载babel
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel" },
+      { test: /\.jsx?$/, exclude: /node_modules/, use: "babel-loader" },
       // 加载html
-      { test: /\.html$/, exclude: /node_modules/, loader: "raw-loader" },
+      { test: /\.html$/, exclude: /node_modules/, use: "raw-loader" },
       // 加载less
       {
         test: /\.(less)$/i,
         exclude: /node_modules/,
-        loader: extractCSS.extract(["css", "less"]),
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "vue-style-loader",
+          "css-loader",
+          "less-loader",
+        ],
       },
       // 图片文件使用 url-loader 来处理，小于8kb的直接转为base64,超过就会输出到output的path
       {
         test: /\.(png|jpe?g|gif)$/,
         exclude: /node_modules/,
-        loader: "url-loader?limit=1024&name=[name].[ext]",
+        use: "url-loader?limit=1024&name=[name].[ext]",
       },
       // 字体
       {
         test: /\.(woff2|woff|ttf|eot|svg|otf)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: ["url-loader?limit=1000&name=assets/fonts/[name].[ext]"],
-      },
-      {
-        test: /\.json$/,
-        exclude: /node_modules/,
-        loaders: ["url-loader?limit=1000&name=assets/data/[name].[ext]"],
+        use: ["url-loader?limit=1000&name=assets/fonts/[name].[ext]"],
       },
     ],
   },
 
   plugins: [
-    // 上面这样设置之后，Webpack会检测各个入口文件生成的代码，
-    // 如果里面引用的代码有出现在vendors列表里的话，
-    // 会被自动抽出来放到./js/vendors.[hash].js里。
-    new webpack.optimize.CommonsChunkPlugin("vendors", "vendors.[hash].js"),
-    extractCSS,
     // 自动生成html的页面，template为路径，目标可以加载到html里面
-    // title为文件title
+    // title 为文件 title
     // filename为生成的文件名，可以前面加路径
     new HtmlWebpackPlugin({
       template: "src/index.html",
       title: "sunopar's World",
       filename: "../../index.html",
     }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode ? "[name].css" : "[name].[hash].css",
+      chunkFilename: devMode ? "[id].css" : "[id].[hash].css",
+    }),
+    new VueLoaderPlugin(),
   ],
-  //这里用于安装babel，如果在根目录下的.babelrc配置了，这里就不写了
-  babel: {
-    presets: ["es2015", "stage-2"],
-    plugins: ["transform-runtime"],
-  },
-  // 对于vue后缀文件的css进行提取打包，vue后缀的js用babel转义
-  vue: {
-    loaders: {
-      js: "babel",
-      less: extractCSS.extract(["css", "less"]),
-      css: extractCSS.extract("style-loader", "css-loader"),
-    },
-  },
   // 将script脚本加载的bootstrap和jquery作为全局变量暴露出来
   externals: {
     bootstrap: "bootstrap",
