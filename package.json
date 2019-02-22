@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "## version",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd packages/web && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunOpar/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunOpar/blog/issues"
+  },
+  "homepage": "https://github.com/sunOpar/blog#readme"
+}
